@@ -1,4 +1,4 @@
-import { Component, signal, Signal } from '@angular/core';
+import { Component, computed, signal, Signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { ListProductsComponent } from './list-products/list-products.component';
@@ -15,6 +15,7 @@ export class AppComponent {
   title = 'miproyectoCD';  
   product = "";
   listProducts = signal<string[]>([])  
+  productCount = computed(() => this.listProducts().length);
 
   constructor(){
     this.listProducts.set(["Mayonesa", "Ketchup", "Mostaza"]);

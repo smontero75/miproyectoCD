@@ -1,3 +1,5 @@
 <input type="text" placeholder="Ingrese producto" [(ngModel)]="product">
 <button (click)="addProduct()">Agregar producto</button>
 <app-list-products [listProducts]="listProducts"></app-list-products>
+
+<h3>Total de producots: {{productCount()}}</h3>

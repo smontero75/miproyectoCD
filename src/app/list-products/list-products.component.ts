@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, input, Input, OnChanges, signal, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, input, Input, OnChanges, signal, SimpleChanges } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -10,9 +10,11 @@ import { FormsModule } from '@angular/forms';
   imports:[CommonModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
+
 export class ListProductsComponent implements OnChanges {
   
   @Input() listProducts = signal<string[]>([]);  
+  
   
   
 
@@ -22,6 +24,8 @@ export class ListProductsComponent implements OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     console.log("algo cambio");
   }
+
+  
 
 
 }
